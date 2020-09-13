@@ -1,4 +1,4 @@
-# ELD lab_1
+# ELK lab_1
 Change `project` in `variables.tf`
 
 Screenshot:
