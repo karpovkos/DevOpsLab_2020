@@ -45,7 +45,7 @@ StatsAllowedIP=$network_range
 SCRIPT
 
 #--- set new time zone
-sudo sed -i "/date.timezone/a php_value[date.timezone] = Europe\/Minsk/" /etc/opt/rh/rh-php72/php-fpm.d/zabbix.conf
+sudo sed -i '/date.timezone/a php_value[date.timezone] = Europe\/Minsk' /etc/opt/rh/rh-php72/php-fpm.d/zabbix.conf
 
 cat <<SCRIPT | sudo tee /etc/zabbix/web/zabbix.conf.php
 <?php
@@ -69,9 +69,9 @@ cat <<SCRIPT | sudo tee /etc/zabbix/web/zabbix.conf.php
 \$IMAGE_FORMAT_DEFAULT   = IMAGE_FORMAT_PNG;
 SCRIPT
 
-#---  turn off selinux 
-# sudo setenforce 0
-# sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config
+#---  turn off selinux !important
+sudo setenforce 0
+sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config
 
 #--- restart services
 sudo systemctl restart zabbix-server httpd rh-php72-php-fpm zabbix-agent
