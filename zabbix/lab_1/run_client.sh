@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#---  turn off selinux and firewalld !important
+sudo systemctl stop firewalld
+sudo systemctl disable firewalld
+
+sudo setenforce 0
+sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config
+
 sudo rpm -Uvh https://repo.zabbix.com/zabbix/5.0/rhel/7/x86_64/zabbix-release-5.0-1.el7.noarch.rpm
 sudo yum install -y zabbix-agent
 
