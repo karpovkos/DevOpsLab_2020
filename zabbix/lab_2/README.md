@@ -12,10 +12,10 @@ Change `project` in `variables.tf`
 ## Creating Web scenario for monitoring web application
 ![screen](screenshots/Web_scenario.png)
 
-## Details (5min) of web scenario: tomcat inscance
+## Details (5min) of web scenario: tomcat instance
 ![screen](screenshots/Web_graph_1.png)
 
-## Details (1 hour) of web scenario: tomcat inscance
+## Details (1 hour) of web scenario: tomcat instance
 ![screen](screenshots/Web_graph_2.png)
 
 ## Creating log monitoring
