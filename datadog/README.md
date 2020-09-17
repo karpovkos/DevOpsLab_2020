@@ -9,7 +9,7 @@ Datadog lab
 4. Run `terraform apply -var api_key=$DD_API_KEY` (or `terraform apply` api_key will be requested).
 
 
-## Terraform just created Datadob infrastructure
+## Terraform just created Datadog infrastructure
 ![screen](screenshots/Main.png)
 ![screen](screenshots/Main_2.png)
 
@@ -25,5 +25,5 @@ Datadog lab
 
 ## Monitoring
 ![screen](screenshots/Monitor_manage.png)
-## Test email notification
+## Email notification
 ![screen](screenshots/Email_send.png)
