@@ -54,21 +54,21 @@ SCRIPT
 #--- config for prometheus
 
 IP_host=`ip addr list eth0 | grep "  inet " | head -n 1 | cut -d " " -f 6 | cut -d / -f 1`     
-
-sudo cat << SCRIPT | sudo tee /tmp/prometheus.yml
+sudo mkdir /tmp/prometheus
+sudo cat << SCRIPT | sudo tee /tmp/prometheus/prometheus.yml
 scrape_configs:
   - job_name: node
     scrape_interval: 5s
     static_configs:
     - targets: ['$IP_host:9100','${IP_Address}:9100']
 
-  - job_name: 'blackbox'
+  - job_name: 'blackbox_web'
     metrics_path: /probe
     params:
       module: [http_2xx] 
     static_configs:
       - targets:
-        - https://tut.by/   
+        - https://onliner.by/   
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
